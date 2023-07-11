@@ -1,6 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
 import SearchIcon from '@mui/icons-material/Search';
+import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
+import { Badge } from '@mui/material';
+import { grey } from '@mui/material/colors';
 
 const Container = styled.div`
     height: 60px;
@@ -21,14 +24,34 @@ const Language = styled.span`
 `
 const SearchContainer = styled.div`
     border: 1px solid lightgrey;
+    padding: 5px;
+    margin-left: 20px;
+    width: 30%;
+    display:flex;
+    align-items: center;
+`
+const Input = styled.input`
+    border: none;
 `
 
 const Center = styled.div`
     flex: 1;
+    text-align: center;
+`
+const Logo = styled.h1`
+    font-weight: bold;
 `
 const Right = styled.div`
     flex: 1;
+    display: flex;
+    justify-content: flex-end;
 `
+const MenuItem = styled.div`
+    font-size: 14px;
+    cursor: pointer;
+    margin-left: 20px;
+`
+
 
 const Navbar = () => {
   return (
@@ -36,10 +59,21 @@ const Navbar = () => {
         <Wrapper>
             <Left>
                 <Language>EN</Language>
-                <SearchContainer><SearchIcon/></SearchContainer>
+                <SearchContainer>
+                    <Input />
+                    <SearchIcon style={{fontSize: 16, color: grey}}/>
+                </SearchContainer>
             </Left>
-            <Center>Center</Center>
-            <Right>Right</Right>
+            <Center><Logo>MALANDRO.STORE</Logo></Center>
+            <Right>
+                <MenuItem>REGISTER</MenuItem>
+                <MenuItem>SIGN IN</MenuItem>
+                <MenuItem>
+                    <Badge badgeContent={4} color="primary">
+                        <ShoppingCartOutlinedIcon />
+                    </Badge>
+                </MenuItem>
+            </Right>
         </Wrapper>
     </Container>
   )
