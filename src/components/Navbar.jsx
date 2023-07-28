@@ -4,6 +4,7 @@ import SearchIcon from '@mui/icons-material/Search';
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import { Badge } from '@mui/material';
 import { grey } from '@mui/material/colors';
+import logo from '../assets/malandrologo.jpeg'
 
 const Container = styled.div`
     height: 60px;
@@ -38,8 +39,9 @@ const Center = styled.div`
     flex: 1;
     text-align: center;
 `
-const Logo = styled.h1`
-    font-weight: bold;
+const Logo = styled.img`
+    width: 160px;
+    height: 70%;
 `
 const Right = styled.div`
     flex: 1;
@@ -64,7 +66,7 @@ const Navbar = () => {
                     <SearchIcon style={{fontSize: 16, color: grey}}/>
                 </SearchContainer>
             </Left>
-            <Center><Logo>MALANDRO.STORE</Logo></Center>
+            <Center><Logo src={logo}></Logo></Center>
             <Right>
                 <MenuItem>REGISTER</MenuItem>
                 <MenuItem>SIGN IN</MenuItem>
